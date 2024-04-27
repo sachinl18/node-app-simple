@@ -30,7 +30,7 @@ stages:
 
     - task: PublishBuildArtifacts@1
       inputs:
-        pathtoPublish: '$(System.DefaultWorkingDirectory)'
+        pathtoPublish: '$(build.artifactstagingdirectory)'
         artifactName: 'node-app-artifact'
         publishLocation: 'Container'
 
