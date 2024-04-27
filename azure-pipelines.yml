@@ -19,6 +19,14 @@ stages:
 
     - script: npm run build
       displayName: 'Build application'
+    
+    - task: ArchiveFiles@2
+      inputs:
+        rootFolderOrFile: '$(System.DefaultWorkingDirectory)'
+        includeRootFolder: false
+        archiveType: 'zip'
+        archiveFile: '$(build.artifactstagingdirectory)/node-app.zip'
+      displayName: 'Archive files'
 
     - task: PublishBuildArtifacts@1
       inputs:
